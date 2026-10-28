@@ -2,17 +2,17 @@
 
 ## 📌 Project Overview
 
-This project predicts whether a bank customer is likely to leave the bank (churn) using a Deep Learning model built with TensorFlow and Keras.
+Customer Churn Prediction is a Machine Learning and Deep Learning project that predicts whether a bank customer is likely to leave the bank.
 
-The application takes customer details as input, applies the required preprocessing steps, and displays the predicted churn probability through an interactive Streamlit web application.
+The project uses a trained neural network built with TensorFlow/Keras and provides an interactive web application using Streamlit. Users can enter customer details and view the model's predicted churn probability.
 
-## 🎯 Project Objectives
+## 🎯 Objectives
 
-- Predict whether a customer is likely to leave the bank.
-- Apply categorical encoding and feature scaling.
-- Use a trained neural network for binary classification.
-- Build an interactive web application using Streamlit.
-- Understand the end-to-end Machine Learning workflow.
+- Predict customer churn using a trained Deep Learning model.
+- Preprocess numerical and categorical customer features.
+- Apply feature scaling and categorical encoding.
+- Build an interactive prediction interface using Streamlit.
+- Demonstrate an end-to-end Machine Learning workflow.
 
 ## 🛠️ Technologies Used
 
@@ -23,12 +23,11 @@ The application takes customer details as input, applies the required preprocess
 - TensorFlow / Keras
 - Streamlit
 - Jupyter Notebook
-- Pickle
 
 ## 📂 Project Structure
 
 ```text
-NLP/
+Customer-Churn-Prediction/
 ├── Churn_Modelling.csv
 ├── LICENSE
 ├── README.md
@@ -37,64 +36,65 @@ NLP/
 ├── label_gender.pkl
 ├── model.h5
 ├── one_hot_geo.pkl
-├── prediction.ipynb
+├── prediction1.ipynb
 ├── requirements.txt
 └── scaler.pkl
 ```
 
 ## 📊 Dataset
 
-The project uses `Churn_Modelling.csv`, which contains customer information and a churn target.
+The project uses `Churn_Modelling.csv`, which contains bank customer information and the target column `Exited`.
 
-Customer features include:
+Features include:
 
 - Credit Score
 - Geography
 - Gender
 - Age
 - Tenure
-- Account Balance
+- Balance
 - Number of Products
 - Credit Card Status
 - Active Membership Status
 - Estimated Salary
 
-The target variable is `Exited`, which indicates whether a customer left the bank.
+The target variable indicates whether a customer left the bank.
 
-## ⚙️ How It Works
+## ⚙️ Project Workflow
 
-1. Customer information is collected through the application.
-2. Gender is transformed using a saved Label Encoder.
-3. Geography is transformed using a saved One-Hot Encoder.
-4. Input features are scaled using a saved Standard Scaler.
-5. The trained TensorFlow/Keras model predicts the churn probability.
-6. The application displays whether the customer is likely to leave or stay.
+1. Collect customer details through the application.
+2. Encode the Gender feature using the saved label encoder.
+3. Encode Geography using the saved One-Hot Encoder.
+4. Scale input features using the saved scaler.
+5. Pass the processed features to the trained neural network.
+6. Display the predicted churn probability and classification.
 
-## 📁 Model and Preprocessing Files
+## 📁 Important Files
 
-| File | Purpose |
+| File | Description |
 |---|---|
-| `model.h5` | Saved trained neural network |
+| `app.py` | Streamlit web application |
+| `model.h5` | Trained TensorFlow/Keras model |
 | `scaler.pkl` | Saved feature scaler |
 | `label_gender.pkl` | Saved gender encoder |
 | `one_hot_geo.pkl` | Saved geography encoder |
+| `Churn_Modelling.csv` | Dataset |
 | `algo.ipynb` | Model development notebook |
-| `prediction.ipynb` | Prediction and preprocessing notebook |
-| `app.py` | Streamlit application |
-| `requirements.txt` | Python dependencies |
+| `prediction1.ipynb` | Prediction and preprocessing notebook |
+| `requirements.txt` | Project dependencies |
 
 ## 💻 Installation and Setup
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/harshad-sindhav/NLP.git
+git clone https://github.com/harshad-sindhav/Customer-Churn-Prediction.git
 ```
 
-### 2. Open the project folder
+### 2. Open the project directory
 
 ```bash
-cd NLP
+cd Customer-Churn-Prediction
 ```
 
 ### 3. Create a virtual environment (optional)
@@ -103,7 +103,7 @@ cd NLP
 python -m venv venv
 ```
 
-Activate it on Windows PowerShell:
+Activate it in Windows PowerShell:
 
 ```powershell
 .\venv\Scripts\Activate.ps1
@@ -115,40 +115,40 @@ Activate it on Windows PowerShell:
 python -m pip install -r requirements.txt
 ```
 
-### 5. Run the Streamlit application
+### 5. Run the application
 
 ```bash
 python -m streamlit run app.py
 ```
 
-The application should open in your browser. If it does not, use the local URL displayed in the terminal.
+Open the local URL displayed in the terminal if the application does not open automatically.
 
-## 🚀 Deploy on Streamlit Community Cloud
+## 🚀 Streamlit Cloud Deployment
 
-1. Push the project files to your GitHub repository.
-2. Open [Streamlit Community Cloud](https://share.streamlit.io/).
-3. Sign in using GitHub.
-4. Create a new app and select the `harshad-sindhav/NLP` repository.
-5. Select the `main` branch.
+1. Open [Streamlit Community Cloud](https://share.streamlit.io/).
+2. Sign in using your GitHub account.
+3. Create a new app.
+4. Select the repository `harshad-sindhav/Customer-Churn-Prediction`.
+5. Choose the `main` branch.
 6. Set the main file path to `app.py`.
 7. Click **Deploy**.
 
-Make sure `requirements.txt` contains compatible versions of the required libraries and all model and preprocessing files are available in the repository.
+Ensure that `requirements.txt` contains compatible dependencies and that all model and preprocessing files are available in the repository.
 
 ## 📈 Prediction Output
 
-The application displays a churn probability and classifies the customer using the configured probability threshold.
+The application displays a churn probability and classifies the customer based on the threshold configured in the code.
 
-- **Likely to Leave:** Predicted churn probability meets or exceeds the configured threshold.
-- **Likely to Stay:** Predicted churn probability is below the configured threshold.
+- **Likely to Leave:** The predicted probability meets or exceeds the configured threshold.
+- **Likely to Stay:** The predicted probability is below the configured threshold.
 
-Predictions are estimates and are not guaranteed outcomes.
+Predictions are estimates and should not be treated as guaranteed outcomes.
 
 ## 🔮 Future Improvements
 
-- Add model evaluation metrics such as precision, recall, F1-score, and ROC-AUC.
-- Improve the user interface and visualizations.
-- Compare different classification models.
+- Evaluate the model using accuracy, precision, recall, F1-score, and ROC-AUC.
+- Improve the user interface and data visualizations.
+- Compare different classification algorithms.
 - Add customer retention recommendations.
 - Improve input validation and error handling.
 
@@ -160,4 +160,7 @@ GitHub: [harshad-sindhav](https://github.com/harshad-sindhav)
 
 ## 📄 License
 
-GNU General Public License v3.0
+
+
+
+This project is distributed under the license specified in the `LICENSE` file.
