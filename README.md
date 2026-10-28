@@ -160,7 +160,4 @@ GitHub: [harshad-sindhav](https://github.com/harshad-sindhav)
 
 ## 📄 License
 
-
-
-
-This project is distributed under the license specified in the `LICENSE` file.
+GNU General Public License v3.0
